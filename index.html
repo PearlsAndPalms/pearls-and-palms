@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>Pearls And Palms</title>
+
+<style>
+body{
+font-family: Arial, sans-serif;
+background:#fdf7f2;
+text-align:center;
+margin:0;
+}
+
+header{
+background:#7ed3c6;
+color:white;
+padding:30px;
+}
+
+h1{
+margin:0;
+font-size:40px;
+}
+
+.section{
+padding:40px;
+}
+
+.products{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:20px;
+}
+
+.bracelet{
+background:white;
+border-radius:10px;
+padding:15px;
+width:220px;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+.bracelet img{
+width:100%;
+border-radius:8px;
+}
+
+.price{
+font-size:18px;
+font-weight:bold;
+}
+
+.order{
+display:inline-block;
+background:#ff8fb1;
+color:white;
+padding:10px 20px;
+border-radius:6px;
+text-decoration:none;
+margin-top:10px;
+}
+
+.order:hover{
+background:#ff6f9a;
+}
+
+footer{
+background:#7ed3c6;
+color:white;
+padding:15px;
+margin-top:40px;
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+<h1>Pearls And Palms 🌴</h1>
+<p>Handmade Bracelets</p>
+</header>
+
+<div class="section">
+<h2>About</h2>
+<p>
+Welcome to Pearls And Palms! I make handmade bracelets with pearls, colorful beads and custom names.
+</p>
+</div>
+
+<div class="section">
+<h2>Bracelets</h2>
+
+<div class="products">
+
+<div class="bracelet">
+<img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a">
+<h3>Name Bracelet</h3>
+<p>Custom name bracelet</p>
+<p class="price">100 KSh</p>
+<a class="order" href="https://wa.me/254791963255?text=Hi%20I%20want%20to%20order%20a%20Name%20Bracelet%20from%20Pearls%20And%20Palms">Order</a>
+</div>
+
+<div class="bracelet">
+<img src="https://images.unsplash.com/photo-1588449668365-d15e397f6787">
+<h3>BFF Bracelet</h3>
+<p>Friendship bracelet</p>
+<p class="price">100 KSh</p>
+<a class="order" href="https://wa.me/254791963255?text=Hi%20I%20want%20to%20order%20a%20BFF%20Bracelet%20from%20Pearls%20And%20Palms">Order</a>
+</div>
+
+<div class="bracelet">
+<img src="https://images.unsplash.com/photo-1602751584552-8ba73aad10e1">
+<h3>Pearl Bracelet</h3>
+<p>Simple bead bracelet</p>
+<p class="price">100 KSh</p>
+<a class="order" href="https://wa.me/254791963255?text=Hi%20I%20want%20to%20order%20a%20Pearl%20Bracelet%20from%20Pearls%20And%20Palms">Order</a>
+</div>
+
+</div>
+</div>
+
+<div class="section">
+<h2>Contact</h2>
+<p>Phone / WhatsApp: <b>0791963255</b></p>
+</div>
+
+<footer>
+<p>© Pearls And Palms</p>
+</footer>
+
+</body>
+</html>
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>Pearls And Palms</title>
+
+<style>
+body{
+font-family: Arial;
+background:#fdf7f2;
+margin:0;
+text-align:center;
+}
+
+header{
+background:#7ed3c6;
+color:white;
+padding:20px;
+}
+
+.section{
+padding:30px;
+}
+
+.products{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:20px;
+}
+
+.bracelet{
+background:white;
+padding:15px;
+border-radius:10px;
+width:200px;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+button{
+background:#ff8fb1;
+color:white;
+border:none;
+padding:10px;
+border-radius:5px;
+cursor:pointer;
+}
+
+.cart{
+background:white;
+padding:20px;
+margin:20px;
+border-radius:10px;
+}
+
+input{
+padding:8px;
+margin:5px;
+width:200px;
+}
+
+</style>
+
+<script>
+let cart = [];
+
+function addToCart(item){
+cart.push(item);
+updateCart();
+}
+
+function updateCart(){
+let cartList = document.getElementById("cart-items");
+cartList.innerHTML = "";
+
+cart.forEach((item)=>{
+let li = document.createElement("li");
+li.innerText = item;
+cartList.appendChild(li);
+});
+}
+
+function checkout(){
+let message = "Hi, I want to order: " + cart.join(", ");
+window.open("https://wa.me/254791963255?text=" + encodeURIComponent(message));
+}
+
+function customOrder(){
+let name = document.getElementById("name").value;
+let color = document.getElementById("color").value;
+let text = document.getElementById("text").value;
+
+let message = "Custom Bracelet Order:%0AName: " + name + "%0AColor: " + color + "%0AText: " + text;
+
+window.open("https://wa.me/254791963255?text=" + message);
+}
+</script>
+
+</head>
+
+<body>
+
+<header>
+<h1>Pearls And Palms 🌴</h1>
+<p>Handmade Bracelets</p>
+</header>
+
+<div class="section">
+<h2>Bracelets</h2>
+
+<div class="products">
+
+<div class="bracelet">
+<h3>Name Bracelet</h3>
+<p>100 KSh</p>
+<button onclick="addToCart('Name Bracelet')">Add to Cart</button>
+</div>
+
+<div class="bracelet">
+<h3>BFF Bracelet</h3>
+<p>100 KSh</p>
+<button onclick="addToCart('BFF Bracelet')">Add to Cart</button>
+</div>
+
+<div class="bracelet">
+<h3>Pearl Bracelet</h3>
+<p>100 KSh</p>
+<button onclick="addToCart('Pearl Bracelet')">Add to Cart</button>
+</div>
+
+</div>
+</div>
+
+<div class="cart">
+<h2>Your Cart 🛒</h2>
+<ul id="cart-items"></ul>
+<button onclick="checkout()">Checkout via WhatsApp</button>
+</div>
+
+<div class="section">
+<h2>Custom Bracelet Order</h2>
+
+<input id="name" placeholder="Your Name"><br> <input id="color" placeholder="Bracelet Color"><br> <input id="text" placeholder="Text on Bracelet"><br>
+
+<button onclick="customOrder()">Order Custom Bracelet</button>
+
+</div>
+
+<footer>
+<p>Contact: 0791963255</p>
+</footer>
+
+</body>
+</html>
